@@ -78,7 +78,7 @@ var Slides = {
 	
 	format: function(template) {
 		var replacements = {
-			"s": this.current.getNode().querySelector("h2, h3, strong, em").innerHTML,
+			"s": this.current.getTitle(),
 			"t": document.body.querySelector("h1").innerHTML,
 			"n": this.slides.indexOf(Slides.current) + 1,
 			"c": this.slides.length
@@ -152,19 +152,8 @@ Slide.prototype.getNode = function() {
 	return this._node;
 }
 
-Slide.prototype._findSections = function(node) {
-	if (node.classList.contains("section")) { 
-		this._sections.push(node);
-	}
-
-	var hasSections = node.classList.contains("sections");
-	node.classList.remove("sections");
-	
-	for (var i=0;i<node.children.length;i++) {
-		var child = node.children[i];
-		if (hasSections) { child.classList.add("section"); }
-		this._findSections(child);
-	}
+Slide.prototype.getTitle = function() {
+	return this._node.querySelector("h2, h3, strong, em").innerHTML;
 }
 
 Slide.prototype.hide = function() {
@@ -199,6 +188,21 @@ Slide.prototype.prev = function() {
 	return true;
 }
 
+Slide.prototype._findSections = function(node) {
+	if (node.classList.contains("section")) { 
+		this._sections.push(node);
+	}
+
+	var hasSections = node.classList.contains("sections");
+	node.classList.remove("sections");
+	
+	for (var i=0;i<node.children.length;i++) {
+		var child = node.children[i];
+		if (hasSections) { child.classList.add("section"); }
+		this._findSections(child);
+	}
+}
+
 Slide.prototype._syncSections = function() {
 	for (var i=0;i<this._sections.length;i++) {
 		var section = this._sections[i];
@@ -228,7 +232,7 @@ Slides.modules.time = {
 	length: 10*60*1000,
 	parent: "footer"
 };
-Slides.modules.skin = "seznam";
+Slides.modules.skin = "default";
 Slides.modules.language = ["en"];
 Slides.modules.transition = "horizontal"; /* none vertical horizontal blend corner */
 Slides.modules.overview = true;
@@ -238,6 +242,7 @@ Slides.modules.fontsize = {
 	normal: "150%"
 };
 Slides.modules.syntax = true;
+Slides.modules.window = true;
 Slides.modules.touch = {
 	tap: true,
 	swipe: true,
