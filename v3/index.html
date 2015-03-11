@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JS Slides v3</title>
+	</head>
+	<body>
+		
+<h1>JS Slides v3</h1>
+
+<section class="slide">
+	<h2>JS Slides v3</h2>
+	<h3>Where semantic HTML meets interactive slide deck</h3>
+	<p>Version 3: a complete rewrite. Hit <kbd>Space</kbd> or <kbd>&rarr;</kbd> to continue&hellip;</p>
+</section>
+
+<section class="slide">
+	<h2>Semantic HTML5</h2>
+	<ul>
+		<li>This page is a normal HTML document</li>
+		<li>Interactivity added by one extra script</li>
+		<li>Accessible, configurable, extensible</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Features</h2>
+	<ul class="sections">
+		<li>Navigate slides and subsections by keyboard or touches</li>
+		<li>Adjust behavior as needed by extension modules</li>
+		<li>Themeable interface</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Modules</h2>
+	<ul>
+		<li>Many modules included by default</li>
+		<li>Can be configured or disabled</li>
+		<li>Writing own modules is easy (but not necessary)</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Modules: core</h2>
+	<ul>
+		<li>Help module: hit <kbd>?</kbd> to see help</li>
+		<li>Overview module: hit <kbd>o</kbd> to toggle overview mode</li>
+		<li>Keyboard module: navigate slides using intuitive controls</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Modules: visual</h2>
+	<ul>
+		<li>Font size: adjust font size using <kbd>B</kbd>, <kbd>S</kbd>, <kbd>N</kbd></li>
+		<li>Skin: define any visual property using standard CSS</li>
+		<li>Transition: pick from one of the available transition animations</li>
+		<li>Syntax: apply syntax highlighting and (optionally) line numbering<br/>
+			<code class="block" data-syntax="js">for (var i = 0; i &lt; this.length; i++) { 
+	j += 3.14;
+} // for</code>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>
+		<span lang="en">Modules: other #1</span>
+		<span lang="cs">Moduly: ostatní #1</span>
+	</h2>
+	<!-- Note: CS language not fully supported by the font -->
+	<ul>
+		<li>
+			<span lang="en">Title: adjust window title to match current slide</span>
+			<span lang="cs">Title: změna titulku okna podle aktuálního snímku</span>
+		</li>
+		<li>
+			<span lang="en">URL: leverage browser history and slide permalinks</span>
+			<span lang="cs">URL: využití historie prohlížeče pro navigaci a permalinky</span>
+		</li>
+		<li>
+			<span lang="en">Language: switch available languages using the <kbd>L</kbd> key</span>
+			<span lang="cs">Language: přepínání jazykových variant klávesou <kbd>L</kbd></span>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Modules: other #2</h2>
+	<ul>
+		<li>Progress: display progress meter</li>
+		<li>Time: display remaining time</li>
+		<!-- Both progress & time are visible at the bottom -->
+		<li>Touch: use tapping, swiping and pinching to emulate keyboard on touch devices</li>
+		<li>Presenter's window: hit <kbd>P</kbd> to display comments and other useful metadata in a separate window</li>
+		<!-- Show presenter's window -->
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Synchronization</h2>
+	<ul>
+		<li>Presentation can be controlled remotely</li>
+		<li>Master / slave / both</li>
+		<li>Uses Firebase backend</li>
+	</ul>
+	<!-- Also, the Remote module is available -->
+</section>
+
+<section class="slide">
+	<h2>Interested?</h2>
+	<!-- Fully OSS on GitHub -->
+	<ul>
+		<li>View <a href="https://github.com/ondras/jsslides/blob/master/v3/index.html">this page's source</a></li>
+		<li>Check out <a href="https://github.com/ondras/jsslides/wiki/V3">the docs</a></li>
+		<li>Check out <a href="https://github.com/ondras/jsslides/tree/master/v3/slides">the code</a></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Questions?</h2>
+	<ul>
+		<li><a href="https://github.com/ondras">https://github.com/ondras</a></li>
+		<li><a href="mailto:ondrej.zara@gmail.com">ondrej.zara@gmail.com</a></li>
+		<li><a href="http://twitter.com/0ndras/">@0ndras</a></li>
+	</ul>
+</section>
+
+	<script src="slides/slides3.js" type="text/javascript"></script>
+	<script>
+		Slides.modules.progress.parent = "body";
+		Slides.modules.fontsize.normal = "200%";
+		Slides.modules.language = ["en", "cs"];
+		Slides.modules.time.parent = "body";
+		Slides.modules.time.remaining = 5 * 60 * 1000;
+	</script>
+
+</body>
+</html>
